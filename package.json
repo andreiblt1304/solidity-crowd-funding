@@ -1,0 +1,27 @@
+{
+  "name": "solidity-crowd-funding",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreiblt1304/solidity-crowd-funding.git"
+  },
+  "author": "andreiblt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreiblt1304/solidity-crowd-funding/issues"
+  },
+  "homepage": "https://github.com/andreiblt1304/solidity-crowd-funding#readme",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.0.11",
+    "fs-extra": "^10.1.0",
+    "ganache-cli": "^6.12.2",
+    "mocha": "^10.2.0",
+    "solc": "^0.8.19",
+    "web3": "^1.8.2"
+  }
+}
