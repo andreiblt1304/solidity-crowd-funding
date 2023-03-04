@@ -74,11 +74,11 @@ contract Crowdfund {
 
     function finalizeRequest(uint requestIndex) public payable restricted {
         Request storage request = requests[requestIndex];
-        require(request.approvalsCount > (contributorsCount) / 2, 
+        require(request.approvalsCount > (contributorsCount / 2), 
             "There has to be more at least 50% percent of approves");
         require(!request.complete);
 
-        request.recipient.transfer(request.value*10**18);
+        request.recipient.transfer(request.value);
         request.complete = true;
     }
 }
