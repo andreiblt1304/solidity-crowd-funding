@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
+import factory from '../ethereum/factory';
 
-export default () => {
-    return (
-        <h1>
-            Crowdfund list
-        </h1>
-    )
+class CrowdfundIndex extends Component {
+    static async getInitialProps() {
+        const crowdfunds = await factory.methods.getDeployedCrowdfunds().call();
+
+        return { crowdfunds };
+    }
+
+    render() {
+        return <div>Available crowdfunds: { this.props.crowdfunds }</div>
+    }
 }
+
+export default CrowdfundIndex;
