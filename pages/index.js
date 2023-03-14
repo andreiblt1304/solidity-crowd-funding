@@ -26,7 +26,6 @@ class CrowdfundIndex extends Component {
         return (
             <Layout>
                 <div>
-                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css"/>
                     <h3>Open Crowdfunds</h3>
                     <Button
                         floated='right'
