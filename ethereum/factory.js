@@ -3,7 +3,7 @@ import CrowdfundFactory from './build/CrowdfundFactory.json';
 
 const instance = new web3.eth.Contract(
     CrowdfundFactory.abi, 
-    '0x254867644D1Bd51Bb48D3eeDE17385fCb71E3976'
+    '0xb7173B5aC4056Be02Caa8cc51c890D83e97cfdDF'
 );
 
 export default instance;

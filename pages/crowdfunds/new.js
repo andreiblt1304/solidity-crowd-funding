@@ -4,6 +4,7 @@ import { Form, Button, Input, Message } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import factory from '../../ethereum/factory';
 import web3 from "../../ethereum/web3";
+import { Router } from '../../routes';
 
 class CrowdfundNew extends Component {
     state = {
@@ -25,6 +26,8 @@ class CrowdfundNew extends Component {
                 .send({
                     from: accounts[0]
                 });
+
+            Router.pushRoute('/');
         } catch (error) {
             this.setState({ errorMessage: error.message });
         }

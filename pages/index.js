@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import factory from '../ethereum/factory';
 import { Card, Button } from 'semantic-ui-react';
 import Layout from '../components/Layout';
+import { Link } from '../routes';
 
 class CrowdfundIndex extends Component {
     static async getInitialProps() {
@@ -14,7 +15,11 @@ class CrowdfundIndex extends Component {
         const items = this.props.crowdfunds.map((crowdfundAddress) => {
             return {
                 header: crowdfundAddress,
-                description: <a>view crowdfund</a>,
+                description: (
+                    <Link route={`crowdfunds/${crowdfundAddress}`}>
+                        <a>view crowdfund</a>
+                    </Link>
+                ),
                 fluid: true
             }
         });
@@ -27,12 +32,17 @@ class CrowdfundIndex extends Component {
             <Layout>
                 <div>
                     <h3>Open Crowdfunds</h3>
-                    <Button
-                        floated='right'
-                        content="Create Crowdfund"
-                        icon="add"
-                        primary
-                    />
+                    <Link route='crowdfunds/new'>
+                        <a>
+                            <Button
+                                floated='right'
+                                content="Create Crowdfund"
+                                icon="add"
+                                primary
+                            />
+                        </a>
+                    </Link>
+                    
                     {this.renderCrowdfunds()}
                 </div>
             </Layout>

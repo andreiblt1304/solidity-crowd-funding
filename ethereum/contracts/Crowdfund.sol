@@ -81,4 +81,18 @@ contract Crowdfund {
         request.recipient.transfer(request.value);
         request.complete = true;
     }
+
+    function getDetails() public view returns (uint, uint, uint, uint, address) {
+        return (
+            minimumContribution,
+            address(this).balance,
+            requests.length,
+            contributorsCount,
+            manager
+        );
+    }
+
+    function getRequestCount() public view returns (uint) {
+        return requests.length;
+    }
 }
